@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jordan Ordonez | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -13,6 +13,7 @@
       padding: 0;
       background-color: #f4f4f4;
       color: #333;
+      line-height: 1.6;
     }
 
     header {
@@ -20,6 +21,15 @@
       color: white;
       padding: 2rem 1rem;
       text-align: center;
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      margin-bottom: 1rem;
     }
 
     main {
@@ -32,11 +42,13 @@
       margin-bottom: 2rem;
     }
 
-    h1, h2 {
+    h1,
+    h2 {
       color: #24292e;
     }
 
-    .project {
+    .project,
+    .blog-post {
       background: white;
       padding: 1rem;
       border-radius: 8px;
@@ -49,17 +61,75 @@
       text-decoration: none;
     }
 
+    .resume-button {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: #0366d6;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .resume-button:hover {
+      background-color: #024b9a;
+    }
+
+    ul.course-list {
+      padding-left: 1.2rem;
+    }
+
+    ul.course-list li {
+      margin-bottom: 0.5rem;
+    }
+
     footer {
       text-align: center;
       font-size: 0.9rem;
       color: #666;
       margin-bottom: 2rem;
     }
+
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+      main {
+        margin: 1rem;
+        padding: 0 0.5rem;
+      }
+
+      .profile-img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 0.75rem;
+      }
+
+      header {
+        padding: 1.5rem 1rem;
+      }
+
+      .project,
+      .blog-post {
+        padding: 0.75rem;
+      }
+
+      .resume-button {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem;
+        font-size: 1.1rem;
+      }
+
+      ul.course-list {
+        padding-left: 1rem;
+      }
+    }
   </style>
 </head>
 
 <body>
   <header>
+    <img src="profile.jpg" alt="Jordan Ordonez" class="profile-img" />
     <h1>Jordan Ordonez</h1>
     <p>Software Engineer & Data Scientist</p>
   </header>
@@ -90,7 +160,43 @@
         <p>Developed a scalable, AWS-powered chatbot that provides personalized restaurant recommendations by querying a Yelp database covering seven cuisines.</p>
         <a href="https://github.com/Jordonez123/DiningConciergeChatbot">View Project</a>
       </div>
+    </section>
 
+    <section>
+      <h2>Blog</h2>
+
+      <div class="blog-post">
+        <h3>🔍 Lessons from Forecasting the Housing Market</h3>
+        <p>Sharing challenges and learnings from applying machine learning to real estate time series data, and why domain knowledge matters just as much as models.</p>
+        <a href="#">Read More</a>
+      </div>
+
+      <div class="blog-post">
+        <h3>🛠️ From MVP to Deployment: My Software Engineering Workflow</h3>
+        <p>A breakdown of how I take an idea from scratch to production, including tips on Git, testing, and AWS deployment.</p>
+        <a href="#">Read More</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Coursework at Columbia University</h2>
+      <ul class="course-list">
+        <li>Machine Learning</li>
+        <li>Algorithms</li>
+        <li>Operating Systems</li>
+        <li>Databases</li>
+        <li>Linear Algebra and Probability</li>
+        <li>Statistical Inference</li>
+        <li>Computational Neuroscience</li>
+        <li>Real Analysis</li>
+        <li>Big Data Analytics</li>
+        <li>Software Engineering</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Resume</h2>
+      <p><a class="resume-button" href="resume.pdf" target="_blank">📄 View My Resume (PDF)</a></p>
     </section>
 
     <section class="contact">
