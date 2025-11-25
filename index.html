@@ -1,219 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jordan Ordonez | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
   <style>
+    :root {
+      --bg: #f5f7fa;
+      --card-bg: #ffffff;
+      --text-dark: #1f2937;
+      --text-light: #4b5563;
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --radius: 14px;
+      --shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
-      line-height: 1.6;
+      color: var(--text-dark);
+      line-height: 1.7;
     }
 
+    /* -------- NAVBAR -------- */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      font-weight: 600;
+      z-index: 100;
+    }
+
+    nav a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    /* -------- HEADER -------- */
     header {
-      background-color: #24292e;
-      color: white;
-      padding: 2rem 1rem;
       text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+      color: white;
     }
 
-    .profile-img {
-      width: 120px;
-      height: 120px;
+    header img {
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
+      border: 4px solid rgba(255,255,255,0.8);
       object-fit: cover;
-      border: 3px solid white;
       margin-bottom: 1rem;
     }
 
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.15rem;
+      font-weight: 300;
+    }
+
+    /* -------- SECTIONS -------- */
     main {
       max-width: 900px;
-      margin: 2rem auto;
+      margin: 3rem auto;
       padding: 0 1rem;
     }
 
     section {
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
 
-    h1,
     h2 {
-      color: #24292e;
-    }
-
-    .project,
-    .blog-post {
-      background: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      font-size: 1.8rem;
+      font-weight: 700;
       margin-bottom: 1rem;
+      color: var(--text-dark);
     }
 
-    .contact a {
-      color: #0366d6;
-      text-decoration: none;
+    /* -------- CARDS -------- */
+    .card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 1.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .resume-button {
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .card a {
       display: inline-block;
-      padding: 0.5rem 1rem;
-      background-color: #0366d6;
-      color: white;
+      margin-top: 0.75rem;
+      font-weight: 600;
+      color: var(--primary);
       text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
     }
 
-    .resume-button:hover {
-      background-color: #024b9a;
+    .card a:hover {
+      color: var(--primary-dark);
     }
 
+    /* -------- COURSE LIST -------- */
     ul.course-list {
+      columns: 2;
       padding-left: 1.2rem;
+      margin: 0;
     }
 
     ul.course-list li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
+      color: var(--text-light);
+      font-size: 0.95rem;
     }
 
+    /* -------- BUTTON -------- */
+    .resume-button {
+      display: inline-block;
+      padding: 0.75rem 1.25rem;
+      background: var(--primary);
+      color: white;
+      border-radius: var(--radius);
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .resume-button:hover {
+      background: var(--primary-dark);
+    }
+
+    /* -------- FOOTER -------- */
     footer {
       text-align: center;
       font-size: 0.9rem;
-      color: #666;
-      margin-bottom: 2rem;
+      color: var(--text-light);
+      padding: 2rem 0;
     }
 
-    /* Mobile responsiveness */
-    @media (max-width: 600px) {
-      main {
-        margin: 1rem;
-        padding: 0 0.5rem;
-      }
-
-      .profile-img {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 0.75rem;
-      }
-
-      header {
-        padding: 1.5rem 1rem;
-      }
-
-      .project,
-      .blog-post {
-        padding: 0.75rem;
-      }
-
-      .resume-button {
-        width: 100%;
-        text-align: center;
-        padding: 0.75rem;
-        font-size: 1.1rem;
-      }
-
+    /* -------- MOBILE -------- */
+    @media (max-width: 640px) {
       ul.course-list {
-        padding-left: 1rem;
+        columns: 1;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav {
+        gap: 1rem;
+        padding: 0.8rem;
       }
     }
   </style>
 </head>
 
 <body>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#blog">Blog</a>
+    <a href="#courses">Coursework</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <header>
-    <img src="profile.jpeg" alt="Jordan Ordonez" class="profile-img" />
+    <img src="profile.jpeg" alt="Jordan Ordonez">
     <h1>Jordan Ordonez</h1>
-    <p>Software Engineer & Data Scientist</p>
+    <p>Software Engineer • Data Scientist</p>
   </header>
 
   <main>
-    <section>
+
+    <!-- ABOUT -->
+    <section id="about">
       <h2>About Me</h2>
-      <p>I’m a Columbia University graduate (CS major, Applied Math minor) with a passion for turning data into actionable insight and building scalable software. I’ve led MVP development, built analytics pipelines, and modeled real estate markets.</p>
+      <div class="card">
+        <p>I’m a Columbia University graduate (CS major, Applied Math minor) with a passion for turning data into actionable insight and building scalable software. I’ve led MVP development, built analytics pipelines, and modeled real estate markets.</p>
+      </div>
     </section>
 
-    <section>
+    <!-- PROJECTS -->
+    <section id="projects">
       <h2>Projects</h2>
 
-      <div class="project">
+      <div class="card">
         <h3>🏠 Housing Market Forecasting</h3>
-        <p>Used machine learning to predict home prices and inventory across the U.S. based on economic, geographic, and seasonal features. Built with Python, Pandas, and XGBoost.</p>
-        <a href="https://github.com/Jordonez123/CapstoneRepo">View Project</a>
+        <p>Machine learning models predicting U.S. home prices and inventory using economic, regional, and seasonal data. Built with Python, Pandas, XGBoost.</p>
+        <a href="https://github.com/Jordonez123/CapstoneRepo">View Project →</a>
       </div>
 
-      <div class="project">
-        <h3>📊 Technology Sector Stock Price Movement Prediction</h3>
-        <p>Final Columbia University Data Science Research Project</p>
-        <a href="https://github.com/Jordonez123/TechSectorPriceMovementPrediction/blob/main/DATA%20SCIENCE%20FINAL%20REPORT.pdf">View Project</a>
+      <div class="card">
+        <h3>📊 Tech Sector Stock Price Prediction</h3>
+        <p>Columbia University final research project analyzing market volatility using ML and time-series modeling.</p>
+        <a href="https://github.com/Jordonez123/TechSectorPriceMovementPrediction/blob/main/DATA%20SCIENCE%20FINAL%20REPORT.pdf">View Project →</a>
       </div>
 
-      <div class="project">
+      <div class="card">
         <h3>🧠 Dining Concierge Chatbot</h3>
-        <p>Developed a scalable, AWS-powered chatbot that provides personalized restaurant recommendations by querying a Yelp database covering seven cuisines.</p>
-        <a href="https://github.com/Jordonez123/DiningConciergeChatbot">View Project</a>
+        <p>A scalable AWS-based system that provides personalized restaurant recommendations using a Yelp dataset across seven cuisines.</p>
+        <a href="https://github.com/Jordonez123/DiningConciergeChatbot">View Project →</a>
       </div>
     </section>
 
-    <section>
-      <a href="blog.html"><h2>Blog</h2></a>
+    <!-- BLOG -->
+    <section id="blog">
+      <h2>Blog</h2>
 
-      <div class="blog-post">
+      <div class="card">
         <h3>🔍 Lessons from Forecasting the Housing Market</h3>
-        <p>Sharing challenges and learnings from applying machine learning to real estate time series data, and why domain knowledge matters just as much as models.</p>
-        <a href="blog-posts/housing-market.html">Read More</a>
+        <p>Challenges and learnings from applying machine learning to real estate time-series data.</p>
+        <a href="blog-posts/housing-market.html">Read More →</a>
       </div>
 
     </section>
 
-    <section>
+    <!-- COURSEWORK -->
+    <section id="courses">
       <h2>Coursework at Columbia University</h2>
-      <ul class="course-list">
-        <li>Python</li>
-        <li>Java</li>
-        <li>Data Structures in Java</li>
-        <li>Fundamentals of Computer Systems</li>
-        <li>Advanced Programming in C</li>
-        <li>Computer Science Theory</li>
-        <li>Big Data & Cloud Computing (Graduate Level)</li>
-        <li>Introduction to Databases</li>
-        <li>Artificial Intelligence</li>
-        <li>Natural Language Processing</li>
-        <li>Machine Learning</li>
-        <li>Introduction to Data Science</li>
-        <li>Multivariable Calculus</li>
-        <li>Linear Algebra</li>
-        <li>Probability and Statistics (Graduate Level)</li>
-        <li>Discrete Mathematics</li>
-        <li>Partial Differential Equations</li>
-        <li>Number Theory & Cryptography</li>
-        <li>Complex Variables</li>
-      </ul>
+      <div class="card">
+        <ul class="course-list">
+          <li>Python</li><li>Java</li><li>Data Structures</li><li>Computer Systems</li><li>Advanced C</li><li>Theory of CS</li>
+          <li>Cloud Computing</li><li>Databases</li><li>AI</li><li>NLP</li><li>Machine Learning</li><li>Data Science</li>
+          <li>Multivariable Calc</li><li>Linear Algebra</li><li>Probability (Grad)</li><li>Discrete Math</li><li>PDEs</li>
+          <li>Cryptography</li><li>Complex Variables</li>
+        </ul>
+      </div>
     </section>
 
+    <!-- RESUME -->
     <section>
       <h2>Resume</h2>
-      <p><a class="resume-button" href="resume.pdf" target="_blank">📄 View My Resume (PDF)</a></p>
+      <a class="resume-button" href="resume.pdf" target="_blank">📄 View My Resume (PDF)</a>
     </section>
 
-    <section class="contact">
+    <!-- CONTACT -->
+    <section id="contact">
       <h2>Contact</h2>
-      <p>📧 Email: <a href="mailto:jordan.i.ordonez@gmail.com">jordan.i.ordonez@gmail.com</a></p>
-      <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/jordan-ordonez-chaguay/" target="_blank">linkedin.com/in/jordonez123</a></p>
-      <p>📂 GitHub: <a href="https://github.com/Jordonez123" target="_blank">github.com/Jordonez123</a></p>
+      <div class="card">
+        <p>📧 Email: <a href="mailto:jordan.i.ordonez@gmail.com">jordan.i.ordonez@gmail.com</a></p>
+        <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/jordan-ordonez-chaguay/" target="_blank">linkedin.com/in/jordan-ordonez-chaguay</a></p>
+        <p>📂 GitHub: <a href="https://github.com/Jordonez123" target="_blank">github.com/Jordonez123</a></p>
+      </div>
     </section>
+
   </main>
 
   <footer>
-    <p>&copy; 2025 Jordan Ordonez</p>
+    <p>© 2025 Jordan Ordonez</p>
   </footer>
-</body>
 
+</body>
 </html>
